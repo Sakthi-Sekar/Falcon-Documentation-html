@@ -1,4 +1,4 @@
-// <!--JS for read external html file-->
+// <!--JS for read html file-->
 
 $(".banner").each(function() {
     console.log('working');
@@ -8,7 +8,8 @@ $(".banner").each(function() {
     });
 });
 
-// <!-- JS for OPEN CONTENT TAB-->
+
+// <!-- OPEN CONTENT TAB-->
 
 function openTab(evt, Name) {
     var i, tabcontent, tablinks;
@@ -28,7 +29,10 @@ function openTab(evt, Name) {
 
 document.getElementById("defaultOpen").click();
 
+
+
 // <!--JS for ACCORDION-->
+
 
 var acc = document.getElementsByClassName("accordion");
 var i;
@@ -76,6 +80,7 @@ function showImg(obj) {
 
 // <!--JS for ADD ACTIVE CLASS TO THE CURRENT BUTTON-->
 
+
 // Add active class to the current button (highlight it)
 var header = document.getElementById("tabActive");
 var btns = header.getElementsByClassName("btn");
@@ -89,10 +94,10 @@ for (var i = 0; i < btns.length; i++) {
     });
 }
 
-//JS for scroll to top button
+
 
 //Get the button
-var mybutton = document.getElementById("topBtn");
+var mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() { scrollFunction() };
@@ -114,7 +119,7 @@ function topFunction() {
 }
 
 
-//JS for Coming soon page
+//Coming soon page
 
 // Set the date we're counting down to
 var countDownDate = new Date("Apr 17, 2021 15:37:25").getTime();
@@ -145,25 +150,25 @@ var x = setInterval(function() {
     }
 }, 1000);
 
-//JS for redirecting into another page
-
+//Redirect into another page using js
 function myFunction() {
     //location.replace("html files/ui-project structure/config.html")
     window.open('html files/ui-project structure/config.html', '_blank');
 }
 
-//JS for read more & Read less button
-
+//Read more & Read less button
 function readMoreLess() {
     var dots = document.getElementById("dots");
     var moreText = document.getElementById("more");
     var btnText = document.getElementById("Btn");
 
+
+
     if (dots.style.display === "none") {
         dots.style.display = "inline";
         btnText.innerHTML = "Read more";
         moreText.style.display = "none";
-        btnText.scrollIntoView(0, 0);
+
 
 
     } else {
@@ -174,91 +179,140 @@ function readMoreLess() {
     }
 }
 
-// JQUERY for READ MORE AND LESS BUTTON
 
+//USING JQUERY READ MORE AND LESS BUTTON
 $(document).on("click", ".toggle-text-button", function() {
+
 
     if ($(this).text() == "Read More") {
         $(this).text("Read Less");
 
         // Use a jquery selector using the `.attr()` of the link
         $("#toggle-text-" + $(this).attr("toggle-text")).slideDown();
-        $('body').scrollTo('#toggle-text-'); // Scroll screen to target element
 
     } else {
         $(this).text("Read More");
         // Use a jquery selector using the `.attr()` of the link
         $("#toggle-text-" + $(this).attr("toggle-text")).slideUp();
 
+
     }
 
 });
 
-//Alert box implementation
 
-function alertBox() {
-    alert("Do not refresh the page.\n Sit back and relaxed");
+/** ALERT POPUP */
 
-
+function alert() {
+    if (window.confirm("Yes/No")) {
+        // window.open("FalconDocument/Falcon UI - User Guide.pdf", "Thank You");
+        if (confirm == true) {
+            document.getElementById('download').click();
+        } else {
+            window.confirm.close();
+        }
+    }
 }
 
-//Sign up/in
+
 
 // Get the modal
-var form = document.getElementById('id01');
 
+var signUp = document.getElementById('id01');
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == form) {
+
+    if (event.target == signUp) {
         modal.scrollTop = window.scrollTo(0, 0);
         modal.style.display = "none";
-
     }
 }
 
-//Refresh Control
-//this code handles the F5/Ctrl+F5/Ctrl+R
-document.onkeydown = checkKeycode
 
-function checkKeycode(e) {
-    var keycode;
-    if (window.event)
-        keycode = window.event.keyCode;
-    else if (e)
-        keycode = e.which;
 
-    // Mozilla firefox
-    if ($.browser.gecko) {
-        if (keycode == 116 || (e.ctrlKey && keycode == 82)) {
-            if (e.preventDefault) {
-                e.preventDefault();
-                e.stopPropagation();
+
+/**SAMPLE DEMO JAVASCRIPT FOR DOWNLOAD */
+function getConfirmation() {
+    var $idown;
+    var retVal = confirm("Do you want to continue ?");
+    if (retVal == true) {
+        var save = document.getElementById("example").value;
+        var blob = new Blob([save], {
+            // type: "text/pdf;charset=utf-8"
+        });
+        saveAs(blob, "Falcon\FalconDocument.zip");
+
+    } else {
+        $idown = $('<iframe>', { id: 'idown', src: 'Falcon\FalconDocument.zip' }).hide().appendTo('body');
+    }
+}
+
+
+
+
+$(document).ready(function() {
+
+    /* 1. Visualizing things on Hover - See next part for action on click */
+    $('#stars li').on('mouseover', function() {
+        var onStar = parseInt($(this).data('value'), 10); // The star currently mouse on
+
+        // Now highlight all the stars that's not after the current hovered star
+        $(this).parent().children('li.star').each(function(e) {
+            if (e < onStar) {
+                $(this).addClass('hover');
+            } else {
+                $(this).removeClass('hover');
             }
+        });
+
+    }).on('mouseout', function() {
+        $(this).parent().children('li.star').each(function(e) {
+            $(this).removeClass('hover');
+        });
+    });
+
+
+    /* 2. Action to perform on click */
+    $('#stars li').on('click', function() {
+        var onStar = parseInt($(this).data('value'), 10); // The star currently selected
+        var stars = $(this).parent().children('li.star');
+
+        for (i = 0; i < stars.length; i++) {
+            $(stars[i]).removeClass('selected');
         }
-    }
-    // IE
-    else if ($.browser.msie) {
-        if (keycode == 116 || (window.event.ctrlKey && keycode == 82)) {
-            window.event.returnValue = false;
-            window.event.keyCode = 0;
-            window.status = "Refresh is disabled";
+
+        for (i = 0; i < onStar; i++) {
+            $(stars[i]).addClass('selected');
         }
-    }
+
+        // JUST RESPONSE (Not needed)
+        var ratingValue = parseInt($('#stars li.selected').last().data('value'), 10);
+        var msg = "";
+        if (ratingValue > 1) {
+            msg = "Thanks! You rated this " + ratingValue + " stars.";
+        } else {
+            msg = "We will improve ourselves. You rated this " + ratingValue + " stars.";
+        }
+        responseMessage(msg);
+
+    });
+
+
+});
+
+
+function responseMessage(msg) {
+    $('.success-box').fadeIn(200);
+    $('.success-box div.text-message').html("<span>" + msg + "</span>");
 }
 
-//Image Grid
 
-function myFunction(imgs) {
-    // Get the expanded image
-    var expandImg = document.getElementById("expandedImg");
-    // Get the image text
-    var imgText = document.getElementById("imgtext");
-    // Use the same src in the expanded image as the image being clicked on from the grid
-    expandImg.src = imgs.src;
-    // Use the value of the alt attribute of the clickable image as text inside the expanded image
-    imgText.innerHTML = imgs.alt;
-    // Show the container element (hidden with CSS)
-    expandImg.parentElement.style.display = "block";
-    expandImg.parentElement.scrollTop = window.scrollTo(0, 0);
 
+/**OVERLAY Effect with Text */
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
 }

@@ -3,74 +3,119 @@
 <head></head>
 
 <body>
-    <h1>Feedback</h1>
+    <h2>Feedback Survey</h2>
     <hr>
+    <form style="padding: 20px; height: auto;">
+        <div class="stars">
 
-    <div class="testimonials-container">
-        <img src="resources/img/male.jpg" alt="Avatar" style="width:90px">
-        <p><span>John</span><br> Software Developer.</p>
-        <p>Good.</p>
-    </div>
+            <form action="">
 
-    <div class="testimonials-container">
-        <img src="resources/img/male.jpg" alt="Avatar" style="width:90px">
-        <p><span>Michael</span> <br>Automation Engineer.</p>
-        <p>Nice.</p>
-    </div>
+                <input class="star star-5" id="star-5" type="radio" name="star" />
+
+                <label class="star star-5" for="star-5"></label>
+
+                <input class="star star-4" id="star-4" type="radio" name="star" />
+
+                <label class="star star-4" for="star-4"></label>
+
+                <input class="star star-3" id="star-3" type="radio" name="star" />
+
+                <label class="star star-3" for="star-3"></label>
+
+                <input class="star star-2" id="star-2" type="radio" name="star" />
+
+                <label class="star star-2" for="star-2"></label>
+
+                <input class="star star-1" id="star-1" type="radio" name="star" />
+
+                <label class="star star-1" for="star-1"></label>
+
+            </form>
+
+        </div>
 
 
-    <input type="text" placeholder="Post your comments..." name="Post your comments..." style="border-radius: 5px;">
-    <!-- <input type="button" value="&#43;" placeholder="name" name="Add your comments" required> &nbsp;<span style="font-size: smaller; color: gray;">Add your comments<b>...</b></span> -->
 
-    <html>
+        <div class='success-box'>
+            <div class='clearfix'></div>
+            <img alt='tick image' width='32' src='data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0MjYuNjY3IDQyNi42NjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQyNi42NjcgNDI2LjY2NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIHN0eWxlPSJmaWxsOiM2QUMyNTk7IiBkPSJNMjEzLjMzMywwQzk1LjUxOCwwLDAsOTUuNTE0LDAsMjEzLjMzM3M5NS41MTgsMjEzLjMzMywyMTMuMzMzLDIxMy4zMzMgIGMxMTcuODI4LDAsMjEzLjMzMy05NS41MTQsMjEzLjMzMy0yMTMuMzMzUzMzMS4xNTcsMCwyMTMuMzMzLDB6IE0xNzQuMTk5LDMyMi45MThsLTkzLjkzNS05My45MzFsMzEuMzA5LTMxLjMwOWw2Mi42MjYsNjIuNjIyICBsMTQwLjg5NC0xNDAuODk4bDMxLjMwOSwzMS4zMDlMMTc0LjE5OSwzMjIuOTE4eiIvPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K'
+            />
+            <div class='text-message'></div>
+            <div class='clearfix'></div>
+        </div>
 
-    <head></head>
+        <p>How would you rate the support you received?</p>
 
-    <body>
-        <h2>Feedback Survey</h2>
-        <hr>
-        <form style="padding: 20px; height: auto;">
-            <div class="stars">
+        <button class="feedbackbtn"><img src="resources/img/other-info/thumbsUp.jpg" style="width: 10%;height: 20%;"></img>Good,I'm satisfied</button>
+        <button class="feedbackbtn"><img src="resources/img/other-info/thumbsDown.png" style="width: 10%;height: 20%;">Bad,I am unsatisfied</button>
 
-                <form action="">
+        <p>Add comment about the quality of support you received(Optional):</p>
+        <input type="text" placeholder="Write something...">
+        <p>What was the reawon you could not achieve your goal?</p>
+        <input type="text" placeholder="Write something...">
+        <input type="submit" style="width: auto; float: right;" value="Submit">
+    </form>
 
-                    <input class="star star-5" id="star-5" type="radio" name="star" />
+    <!-- RATING SCOREBOARD -->
+    <p>4.1 average based on 254 reviews.</p>
+    <hr style="border:3px solid #f1f1f1">
 
-                    <label class="star star-5" for="star-5"></label>
-
-                    <input class="star star-4" id="star-4" type="radio" name="star" />
-
-                    <label class="star star-4" for="star-4"></label>
-
-                    <input class="star star-3" id="star-3" type="radio" name="star" />
-
-                    <label class="star star-3" for="star-3"></label>
-
-                    <input class="star star-2" id="star-2" type="radio" name="star" />
-
-                    <label class="star star-2" for="star-2"></label>
-
-                    <input class="star star-1" id="star-1" type="radio" name="star" />
-
-                    <label class="star star-1" for="star-1"></label>
-
-                </form>
-
+    <div class="row">
+        <div class="side">
+            <div>5 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+                <div class="bar-5"></div>
             </div>
-
-            <p>How would you rate the support you received?</p>
-
-            <button class="feedbackbtn"><img src="resources/img/blogs/thumbsUp.png" style="width: 10%;height: 20%;"></img>&nbsp;Good,I'm satisfied</button>
-            <button class="feedbackbtn"><img src="resources/img/blogs/thumbsDown.jpg" style="width: 10%;height: 20%;">&nbsp;Bad,I am unsatisfied</button>
-
-            <p>Add comment about the quality of support you received(Optional):</p>
-            <input type="text" placeholder="Write something...">
-            <p>What was the reawon you could not achieve your goal?</p>
-            <input type="text" placeholder="Write something...">
-            <input type="submit" style="width: auto; float: right;" value="Submit">
-        </form>
-    </body>
+        </div>
+        <div class="side right">
+            <div>150</div>
+        </div>
+        <div class="side">
+            <div>4 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+                <div class="bar-4"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>63</div>
+        </div>
+        <div class="side">
+            <div>3 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+                <div class="bar-3"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>15</div>
+        </div>
+        <div class="side">
+            <div>2 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+                <div class="bar-2"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>6</div>
+        </div>
+        <div class="side">
+            <div>1 star</div>
+        </div>
+        <div class="middle">
+            <div class="bar-container">
+                <div class="bar-1"></div>
+            </div>
+        </div>
+        <div class="side right">
+            <div>20</div>
+        </div>
+    </div>
 
 </body>
-
-</html>

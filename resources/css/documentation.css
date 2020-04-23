@@ -15,7 +15,7 @@ body {
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 15px;
     line-height: 1.5em;
-    counter-reset: section;
+    counter-reset: methods;
 }
 
 
@@ -76,8 +76,8 @@ nav a {
 }
 
 .count li::before {
-    counter-increment: section;
-    content: "Method " counter(section) ": ";
+    counter-increment: methods;
+    content: "Method " counter(methods) ": ";
 }
 
 
@@ -556,12 +556,12 @@ li em {
 .scroll {
     overflow-y: scroll;
     overflow-x: hidden;
-    height: 470px;
+    height: 490px;
     float: right;
 }
 
 .scroll::-webkit-scrollbar-track {
-    -box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #F5F5F5;
 }
 
@@ -571,7 +571,7 @@ li em {
 }
 
 .scroll::-webkit-scrollbar-thumb {
-    background-color: #168fae !important;
+    background-color: #168fae!important;
 }
 
 
@@ -630,7 +630,7 @@ br {
 
 /*--Scroll to top button--*/
 
-#topBtn {
+#myBtn {
     display: none;
     position: fixed;
     bottom: 20px;
@@ -643,10 +643,10 @@ br {
     color: white;
     cursor: pointer;
     padding: 15px;
-    border-radius: 45%;
+    border-radius: 50%;
 }
 
-#topBtn:hover {
+#myBtn:hover {
     background-color: #555;
 }
 
@@ -799,36 +799,36 @@ ul,
 }
 
 
-/*--SHORT LINE--*/
-
-.short-line hr {
-    border: 0;
-    border-top: 2px solid #168fae !important;
-    flex: 1;
-    z-index: 1;
-    width: 50%;
-    margin-left: 25%;
-}
-
-
-/* DOWNLOAD BUTTON */
+/* DOWNLOAD LINK */
 
 .downloadLink {
+    background-color: DodgerBlue;
     border: none;
     color: white;
-    background-color: #168fae;
     padding: 12px 30px;
     cursor: pointer;
     font-size: 20px;
     text-decoration: none;
+    border-radius: 60px;
+    margin-top: 5px;
+    margin-left: 70%;
+    position: fixed;
 }
 
 .downloadLink:hover {
-    background-color: DodgerBlue;
+    background-color: RoyalBlue;
 }
 
 
-/*---SIGN UP---*/
+/**IMAGE SHRINK**/
+
+.imgshrink {
+    width: 40%;
+    height: 10%;
+}
+
+
+/** SIGN IN AND SIGN UP**/
 
 
 /* Full-width input fields */
@@ -853,9 +853,6 @@ input[type=password]:focus {
 }
 
 
-/* Sign up button */
-
-
 /* Float cancel and signup buttons and add an equal width */
 
 .cancelbtn,
@@ -875,7 +872,7 @@ input[type=password]:focus {
 
 /* The Modal (background) */
 
-.modal-page {
+.modal {
     display: none;
     /* Hidden by default */
     position: fixed;
@@ -884,10 +881,9 @@ input[type=password]:focus {
     /* Sit on top */
     left: 0;
     top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
     /* Full height */
+    width: 100%;
+    height: 100%;
     overflow: auto;
     /* Enable scroll if needed */
     background-color: #474e5d;
@@ -897,7 +893,7 @@ input[type=password]:focus {
 
 /* Modal Content/Box */
 
-.modal-form {
+.modal-content {
     background-color: #fefefe;
     margin: auto auto auto auto;
     /* 5% from the top, 15% from the bottom and centered */
@@ -970,19 +966,22 @@ hr {
 }
 
 
-/* Newsletter */
+/**GLOSSARY MENU**/
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
+.glossary {
+    padding: 14px 16px;
+    list-style-type: none;
 }
+
+
+/*NEWS LETTERS*/
 
 form {
     border: 3px solid #f1f1f1;
     font-family: Arial;
-    margin-top: 3%;
 }
 
-.newsletter-container {
+.newslettercontainer {
     padding: 20px;
     background-color: #f1f1f1;
 }
@@ -1005,9 +1004,6 @@ input[type=submit] {
     background-color: #168fae;
     color: white;
     border: none;
-    box-sizing: border-box;
-    width: 35%;
-    margin-left: 35%;
 }
 
 input[type=submit]:hover {
@@ -1015,77 +1011,49 @@ input[type=submit]:hover {
 }
 
 
-/* Feedback(Testimonials) */
+/**FEED BACK BUTTON**/
 
-.testimonials-container {
-    border: 2px solid #ccc;
-    background-color: #eee;
-    border-radius: 5px;
-    padding: 16px;
-    margin: 16px 0
+.feedbackbtn {
+    color: black;
+    cursor: pointer;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
-.testimonials-container::after {
-    content: "";
-    clear: both;
-    display: table;
+.feedbackbtn:hover {
+    background-color: #168fae;
 }
 
-.testimonials-container img {
+
+/**BLOG POST*/
+
+.textarea {
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    border: 4px solid #ccc;
+    border-radius: 4px;
+    box-sizing: 20%;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+.blogimg {
+    width: 10%;
+    height: 5px;
     float: left;
-    margin-right: 20px;
-    border-radius: 50%;
 }
 
-.testimonials-container span {
-    font-size: 20px;
-    margin-right: 15px;
+.blogtext {
+    float: right;
+    padding: 20%;
+    text-align: justify;
 }
 
-input[type=button]:hover {
-    opacity: 0.8;
-    display: inline-block;
+.textarea>p {
+    margin-left: 32%;
 }
-
-.user-interface input[type=text] {
-    display: inline-block;
-}
-
-@media (max-width: 500px) {
-    .container {
-        text-align: center;
-    }
-    .testimonials-container img {
-        margin: auto;
-        float: none;
-        display: block;
-    }
-}
-
-
-/* Image Grid */
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-}
-
-
-/* Create two equal columns that sits next to each other */
-
-.column {
-    flex: 50%;
-    padding: 0 4px;
-}
-
-.column img {
-    margin-top: 8px;
-    vertical-align: middle;
-}
-
-
-/* Feedback survey form */
 
 
 /**Ratings**/
@@ -1132,65 +1100,163 @@ label.star:before {
 }
 
 
-/* Image Part 2 Tab Image */
+/**RAting msg**/
 
+.success-box {
+    margin: 50px 0;
+    padding: 10px 10px;
+    border: 1px solid #eee;
+    background: #f9f9f9;
+}
 
-/* The grid: Four equal columns that floats next to each other */
+.success-box img {
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
 
-.img-column {
-    float: left;
-    width: 25%;
-    padding: 10px;
+.success-box>div {
+    vertical-align: top;
+    display: inline-block;
+    color: #888;
+}
+
+.clearfix {
+    clear: both;
 }
 
 
-/* Style the images inside the grid */
+/**OVERLAY EFFECT**/
 
-.img-column img {
-    opacity: 0.8;
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
     cursor: pointer;
 }
 
-.img-column img:hover {
-    opacity: 1;
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+.overlayimg {
+    width: 500px;
+    height: 500px;
+    border: 4px solid #ccc;
+}
+
+
+/**USER RATING PROGRESS*/
+
+.heading {
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+.fa {
+    font-size: 25px;
+}
+
+.checked {
+    color: orange;
+}
+
+
+/* Three column layout */
+
+.side {
+    float: left;
+    width: 15%;
+    margin-top: 10px;
+}
+
+.middle {
+    margin-top: 10px;
+    float: left;
+    width: 70%;
+}
+
+
+/* Place text to the right */
+
+.right {
+    text-align: right;
 }
 
 
 /* Clear floats after the columns */
 
-.img-row:after {
+.row:after {
     content: "";
     display: table;
     clear: both;
 }
 
 
-/* The expanding image container (positioning is needed to position the close button and the text) */
+/* The bar container */
 
-.imgtab-container {
-    position: relative;
-    display: none;
+.bar-container {
+    width: 100%;
+    background-color: #f1f1f1;
+    text-align: center;
+    color: white;
 }
 
 
-/* Expanding image text */
+/* Individual bars */
 
-#imgtext {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
-    color: white;
-    font-size: 20px;
+.bar-5 {
+    width: 60%;
+    height: 18px;
+    background-color: #4CAF50;
+}
+
+.bar-4 {
+    width: 30%;
+    height: 18px;
+    background-color: #2196F3;
+}
+
+.bar-3 {
+    width: 10%;
+    height: 18px;
+    background-color: #00bcd4;
+}
+
+.bar-2 {
+    width: 4%;
+    height: 18px;
+    background-color: #ff9800;
+}
+
+.bar-1 {
+    width: 15%;
+    height: 18px;
+    background-color: #f44336;
 }
 
 
-/* Closable button inside the image */
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
 
-.img-closebtn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    color: white;
-    font-size: 35px;
-    cursor: pointer;
+@media (max-width: 400px) {
+    .side,
+    .middle {
+        width: 100%;
+    }
+    .right {
+        display: none;
+    }
 }
